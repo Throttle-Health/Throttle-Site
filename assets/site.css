@@ -51,13 +51,14 @@ header {
 }
 
 .brand {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 2px;
   text-decoration: none;
 }
 
 .brand-icon {
+  justify-self: start;
   width: 56px;
   height: 56px;
   border: 1px solid var(--icon-line);
