@@ -50,10 +50,23 @@ header {
   margin-bottom: 56px;
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--icon-line);
+  border-radius: 13px;
+}
+
 .wordmark {
   height: 88px;
   width: auto;
-  margin-left: -12px;
 }
 
 .wordmark.dark {
@@ -140,6 +153,12 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .brand-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+  }
+
   .wordmark {
     height: 72px;
   }
@@ -168,15 +187,6 @@ footer {
 .hero {
   margin-bottom: 40px;
   text-align: center;
-}
-
-.app-icon {
-  display: block;
-  width: 92px;
-  height: 92px;
-  margin: 0 auto 28px;
-  border: 1px solid var(--icon-line);
-  border-radius: 21px;
 }
 
 .hero .lead {
