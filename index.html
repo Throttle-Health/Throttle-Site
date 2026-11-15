@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Throttle - Health &amp; Training</title>
-  <meta name="description" content="Recovery and training for iPhone and Apple Watch that counts the effort you log and shows why each value went up or down. Your health data stays on your iPhone.">
+  <meta name="description" content="Recovery and training for iPhone and Apple Watch. A readiness score that drains with training and recharges with sleep, and counts strength and HIIT even when your heart rate stays low. Your health data stays on your iPhone.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="home">
-  <div class="page">
+  <div class="page page-wide">
     <header>
       <a href="./" aria-label="Throttle home" class="brand">
         <img class="brand-icon" src="assets/throttle-icon.svg" alt="">
@@ -20,33 +20,75 @@
     </header>
 
     <main>
-      <div class="hero">
-        <h1>Recovery and training for Apple Watch.</h1>
-        <p class="lead">Readiness, Target load and Sleep score for iPhone and Apple Watch that count the effort you log, and show why each value went up or down.</p>
-      </div>
+      <section class="split hero-split">
+        <div class="split-text">
+          <p class="eyebrow">iPhone and Apple Watch · Public beta</p>
+          <h1>Recovery and training for Apple Watch.</h1>
+          <p class="lead">A readiness score that drains with training and recharges with sleep. Strength and HIIT count too, even when your heart rate stays low.</p>
+          <div class="cta-row">
+            <a class="button" href="TESTFLIGHT_LINK">Join the free beta on TestFlight</a>
+            <span class="cta-note">No account. Your data stays on your iPhone.</span>
+          </div>
+        </div>
+        <div class="split-media">
+          <img class="screen" src="assets/screen-today.png" width="660" height="1410" alt="Throttle Today screen with Readiness 48%, Target load and Sleep score 78%">
+        </div>
+      </section>
+
+      <section class="panel">
+        <p class="eyebrow">Your effort counts</p>
+        <h2 class="section-title">A heavy lifting day counts as heavy, even if your heart rate never climbed.</h2>
+        <p class="section-lead">Rate your effort on Apple Watch after strength, HIIT, functional fitness, yoga or climbing, and Throttle counts it. Runs and rides count by heart rate, which already measures them well.</p>
+        <div class="mini-cards">
+          <div class="mini-card">
+            <p class="mini-title">Strength and HIIT</p>
+            <p>Counted by the effort you log.</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-title">Runs and rides</p>
+            <p>Counted by heart rate.</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-title">The next morning</p>
+            <p>Leftover effort still lowers your readiness.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="split split-reverse">
+        <div class="split-media">
+          <img class="screen" src="assets/screen-readiness.png" width="660" height="1410" alt="Throttle Readiness screen: this morning 48, Recovery +66, Leftover effort −18" loading="lazy">
+        </div>
+        <div class="split-text">
+          <p class="eyebrow">It tells you why</p>
+          <h2 class="section-title">No mystery numbers.</h2>
+          <p class="quote">“Recovery is 7 points under your average. Lighter day, up to 50 left of Target load.”</p>
+          <div class="breakdown">
+            <div><span class="muted">This morning</span><strong>48</strong></div>
+            <div><span>Recovery</span><strong>+66</strong></div>
+            <div><span>Leftover effort <span class="muted">(yesterday's session)</span></span><strong>−18</strong></div>
+          </div>
+          <p class="muted">Every score shows what moved it, how it compares with your usual, and what that means for today.</p>
+        </div>
+      </section>
 
       <div class="cards">
-        <section class="card">
-          <h2>Your effort counts</h2>
-          <p>Strength, HIIT, functional fitness, yoga or climbing: rate your effort on Apple Watch and Throttle counts it. A heavy session with a low heart rate still counts as heavy. Runs and rides count by heart rate, which already measures them well.</p>
-        </section>
-        <section class="card">
-          <h2>Every metric, explained in detail</h2>
-          <p>What it means, how it compares with your usual and exactly what moved it today, in clear language.</p>
-        </section>
         <section class="card">
           <h2>Built around training and recovery</h2>
           <p>Made for lifting, HIIT and hybrid training, and just as complete for runners and for anyone who wants to understand their body better. Training status, load ratio and VO2 max next to your sleep and heart rate.</p>
         </section>
         <section class="card">
-          <h2>Privacy</h2>
+          <h2>Private by design</h2>
           <p>Your health data and your scores stay on your iPhone. No account, no server, no analytics, ads or tracking. Maps and weather go through Apple, without your health data.</p>
         </section>
-        <section class="card">
-          <h2>Everything in one subscription</h2>
-          <p>Every feature from day one, with nothing extra to unlock. Try it free for two weeks, then choose monthly or yearly. Cancel anytime in your iPhone settings.</p>
-        </section>
       </div>
+
+      <section class="panel beta" id="beta">
+        <h2 class="section-title">Free during the beta.</h2>
+        <p class="section-lead">Beta testers get 3 months free when Throttle launches on the App Store. Needs an iPhone and an Apple Watch.</p>
+        <a class="button" href="TESTFLIGHT_LINK">Join the free beta on TestFlight</a>
+        <p class="beta-note">Feedback and updates in <a href="https://www.reddit.com/r/ThrottleHealth/">r/ThrottleHealth</a></p>
+      </section>
 
       <p class="note">Throttle gives insights for training and recovery. It is not medical advice.</p>
     </main>
