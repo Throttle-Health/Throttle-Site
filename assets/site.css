@@ -342,30 +342,8 @@ footer {
   font-size: 18px;
 }
 
-.mini-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-}
-
-.mini-card {
-  padding: 18px 20px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--background);
-}
-
-.mini-card p {
-  margin: 0;
-  color: var(--secondary);
-  font-size: 15px;
-}
-
-.mini-card .mini-title {
-  margin-bottom: 4px;
-  color: var(--text);
-  font-size: 17px;
-  font-weight: 600;
+.panel .section-lead:last-child {
+  margin-bottom: 0;
 }
 
 .quote {
