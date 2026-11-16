@@ -434,3 +434,65 @@ footer {
     margin-bottom: 64px;
   }
 }
+
+/* Running and Journal sections: a phone with a floating card */
+.stack {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+}
+
+.stack .screen {
+  display: block;
+  margin: 0 auto;
+}
+
+.float-card {
+  position: absolute;
+  bottom: 32px;
+  width: 78%;
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+}
+
+.float-left {
+  left: -40px;
+}
+
+.float-right {
+  right: -64px;
+}
+
+.mini-cards-tight {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+@media (max-width: 860px) {
+  .float-left {
+    left: -24px;
+  }
+
+  .float-right {
+    right: -24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .float-card {
+    position: relative;
+    bottom: auto;
+    display: block;
+    width: 88%;
+    margin: -96px auto 0;
+  }
+
+  .float-left,
+  .float-right {
+    left: auto;
+    right: auto;
+  }
+
+  .mini-cards-tight {
+    grid-template-columns: 1fr;
+  }
+}
