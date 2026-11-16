@@ -463,10 +463,6 @@ footer {
   right: -64px;
 }
 
-.mini-cards-tight {
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-}
-
 @media (max-width: 860px) {
   .float-left {
     left: -24px;
@@ -490,9 +486,5 @@ footer {
   .float-right {
     left: auto;
     right: auto;
-  }
-
-  .mini-cards-tight {
-    grid-template-columns: 1fr;
   }
 }
