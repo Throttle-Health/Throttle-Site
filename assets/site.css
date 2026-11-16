@@ -279,6 +279,20 @@ footer {
   height: auto;
 }
 
+.hero-split .split-text {
+  flex: 1 1 380px;
+}
+
+.hero-media {
+  flex: 1.4 1 520px;
+}
+
+.hero-screens {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+}
+
 .hero-split .lead {
   max-width: 520px;
   margin: 0 0 28px;
