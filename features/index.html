@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features: Throttle</title>
+<meta name="description" content="What is in Throttle: sleep, workouts, running, goals and the journal, with what is free and what is in Pro.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Features: Throttle">
+<meta property="og:description" content="What is in Throttle: sleep, workouts, running, goals and the journal, with what is free and what is in Pro.">
+<meta property="og:url" content="https://throttle.health/features/">
+<link rel="canonical" href="https://throttle.health/features/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<style>
+@font-face{font-family:'Nunito';font-style:normal;font-display:swap;font-weight:200 1000;src:url(../assets/fonts/nunito-latin.woff2) format('woff2')}
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
+body{margin:0;background:#000}
+a{color:#55D6F2}a:hover{color:#9BE8F8}
+.t{font-family:ui-rounded,"SF Pro Rounded","Nunito",-apple-system,system-ui,sans-serif;color:#F5F7F8;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;box-sizing:border-box}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:26px 0}
+.navlinks{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.navlinks a{color:#8E969C;text-decoration:none;font-weight:700;font-size:15px;transition:color .2s}
+.navlinks a:hover{color:#F5F7F8}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:56px;align-items:center;padding:40px 0 56px}
+.h1{font-size:clamp(46px,6.4vw,92px);line-height:0.96;letter-spacing:-0.04em;font-weight:900;margin:0}
+.h2{font-size:clamp(34px,4.2vw,58px);line-height:1;letter-spacing:-0.035em;font-weight:900;margin:0}
+.lead{font-size:20px;line-height:1.5;color:#B9C0C5;margin:0}
+.body{font-size:17px;line-height:1.6;color:#8E969C;margin:0}
+.label{font-size:12px;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;margin:0}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.pro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.price{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:18px}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s}
+.card:hover{transform:translateY(-4px);border-color:#34393D}
+.dot{width:10px;height:10px;transition:background-color .45s ease,transform .45s ease}
+.rstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ecard{padding:32px}
+.cval{font-size:24px;font-weight:800;letter-spacing:-0.01em;white-space:nowrap}
+.pill{transition:background-color .25s,color .25s,transform .25s}
+.step{transition:opacity .4s,border-color .6s,background-color .6s,box-shadow .6s}
+.float{animation:float 7s ease-in-out infinite}
+.glow{animation:glow 6s ease-in-out infinite}
+.mq{display:flex;gap:44px;width:max-content;animation:mq 46s linear infinite}
+.draw{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 3s ease-out both}
+.spin{position:relative}
+.spin::before{content:"";position:absolute;inset:-1px;border-radius:31px;padding:1.5px;background:conic-gradient(from var(--a),#263459,#55D6F2,#5B4BE8,#263459 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 7s linear infinite;pointer-events:none}
+html{scroll-behavior:smooth}
+.shine{background:linear-gradient(100deg,#55D6F2,#4F7BFF,#8B7DFF,#55D6F2,#4F7BFF);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+.drift{animation:drift 14s ease-in-out infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 1.8s ease-in-out infinite}
+.area{animation:fadein 2s .6s both}
+.fill{background:linear-gradient(90deg,#F5F7F8 50%,#2A2F33 50%);background-size:200% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent}
+.bar{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#55D6F2,#4F7BFF,#8B7DFF);z-index:5}
+.ov{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.sbar{transform-origin:0 50%}
+.mv{transition:transform .09s linear,left .09s linear,top .09s linear}
+.hb{transition:opacity .25s,box-shadow .25s,transform .25s;transform-origin:50% 100%}
+.pro6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.s6{grid-column:span 6}.s2{grid-column:span 2}
+@keyframes shine{to{background-position:300% 0}}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-60px,40px) scale(1.25)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.55}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes fill{from{background-position:100% 0}to{background-position:0 0}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.rt{stroke-dasharray:1}
+.rt1{stroke-dashoffset:.65;animation:rt1 5.2s linear infinite}
+.rt2{stroke-dashoffset:.2;animation:rt2 5.2s linear infinite}
+.rt3{stroke-dashoffset:0;animation:rt3 5.2s linear infinite}
+.rdot{display:none}
+.rcol{fill:#F5C842;animation:rcol 5.2s linear infinite}
+.elit{clip-path:inset(0 0 0 0);animation:elit 5.2s linear infinite}
+.ecur{left:100%;animation:ecur 5.2s linear infinite}
+@supports (offset-path:path("M0 0")){.rdot{display:inline;offset-path:path("M60 200 L112 150 L172 158 L212 100 L292 80 L352 122 L380 182 L312 216 L232 204 L152 226 L60 200");offset-rotate:0deg;offset-distance:100%;animation:rdot 5.2s linear infinite}}
+@keyframes rt1{0%{stroke-dashoffset:1;opacity:1}28%{stroke-dashoffset:.65}92%{stroke-dashoffset:.65;opacity:1}100%{stroke-dashoffset:.65;opacity:0}}
+@keyframes rt2{0%{stroke-dashoffset:1;opacity:1}64%{stroke-dashoffset:.2}92%{stroke-dashoffset:.2;opacity:1}100%{stroke-dashoffset:.2;opacity:0}}
+@keyframes rt3{0%{stroke-dashoffset:1;opacity:1}80%{stroke-dashoffset:0}92%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes rdot{0%{offset-distance:0%;opacity:1}80%{offset-distance:100%}92%{offset-distance:100%;opacity:1}100%{offset-distance:100%;opacity:0}}
+@keyframes rcol{0%,27%{fill:#6CD3F2}29%,63%{fill:#A8D95B}65%,100%{fill:#F5C842}}
+@keyframes elit{0%{clip-path:inset(0 100% 0 0);opacity:1}80%{clip-path:inset(0 0 0 0)}92%{clip-path:inset(0 0 0 0);opacity:1}100%{clip-path:inset(0 0 0 0);opacity:0}}
+@keyframes ecur{0%{left:0}80%,100%{left:100%}}
+.wscroll{animation:wscroll 16s cubic-bezier(.45,0,.2,1) infinite}
+@keyframes wscroll{0%,12%{transform:translateY(0)}19%,33%{transform:translateY(-21.734%)}40%,54%{transform:translateY(-43.467%)}61%,82%{transform:translateY(-65.2%)}92%,100%{transform:translateY(0)}}
+@keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(60px) scale(.96);filter:blur(10px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes spin{to{--a:360deg}}
+@supports (animation-timeline:view()){
+.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 42%}
+.draw{animation:draw linear both;animation-timeline:view();animation-range:entry 30% cover 50%}
+.area{animation:fadein linear both;animation-timeline:view();animation-range:entry 60% cover 55%}
+.fill{animation:fill linear both;animation-timeline:view();animation-range:entry 25% cover 45%}
+.bar{animation:grow linear both;animation-timeline:scroll(root)}
+.sbar{animation:grow linear both;animation-timeline:view();animation-range:entry 20% cover 40%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:620px){.ov{grid-template-columns:minmax(0,1fr)}.rstats{grid-template-columns:repeat(2,minmax(0,1fr))}.ecard{padding:20px}.dot{width:7px;height:7px}.cval{font-size:19px}}
+@media (max-width:960px){
+.hero,.split,.price{grid-template-columns:minmax(0,1fr)}
+.pro,.pro6{grid-template-columns:minmax(0,1fr)}
+.ov{grid-template-columns:repeat(2,minmax(0,1fr))}
+.s6,.s2{grid-column:auto}
+.quotes{grid-template-columns:minmax(0,1fr)}
+}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:960px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.tiles{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){.nav{gap:12px}.nav .navlinks{gap:14px}.nav .navlinks a{font-size:14px}.nav .navlinks a:nth-child(3){display:none}}
+</style>
+</head>
+<body>
+<div class="t" style="background: #000000; min-height: 100vh; overflow: hidden">
+<div class="bar" aria-hidden="true"></div>
+
+<div class="wrap">
+<nav class="nav" aria-label="Main">
+<a href="../" style="display: flex; align-items: center; gap: 12px; text-decoration: none" aria-label="Throttle home">
+<img src="../assets/throttle-icon.svg" alt="" style="width: 38px; height: 38px; border-radius: 10px">
+<span style="font-size: 21px; font-weight: 900; letter-spacing: -0.02em; color: #F5F7F8">Throttle</span>
+</a>
+<div class="navlinks">
+<a href="../features/">Features</a>
+<a href="../pro/">Free and Pro</a>
+<a href="../faq/">FAQ</a>
+<a href="https://apps.apple.com/app/throttle-health-training/id6831547958" target="_blank" rel="noopener" style="color: #000000; background: #F5F7F8; padding: 10px 18px; border-radius: 999px">Download</a>
+</div>
+</nav>
+</div>
+
+<header style="padding: 64px 0 40px" aria-label="Intro">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 20px; max-width: 1180px">
+<p class="label" style="color: #8B9BFF">Features</p>
+<h1 class="h2" style="font-size: clamp(40px, 5.4vw, 72px)">What's in Throttle.</h1>
+<p class="lead" style="max-width: 720px">The home page shows Readiness and how effort counts. Here's the rest, with what's free and what's in Pro.</p>
+</div>
+</header>
+
+<section id="sleep" style="border-top: 1px solid #141618; padding: 104px 0" aria-label="Sleep">
+<div class="wrap split">
+<div class="rv" style="display: flex; flex-direction: column; gap: 22px">
+<p class="label" style="color: #8B9BFF">Sleep</p>
+<h2 class="h2">A sleep score you can check.</h2>
+<p class="body">Out of 100, and you see every part of it. So when you wake up wrecked with a decent score, you can see which part is off.</p>
+<p class="body" style="color: #F5F7F8">All free. You don't have to train at all to use it.</p>
+</div>
+<div class="rv" style="display: flex; justify-content: center">
+<div role="img" aria-label="Sleep score 74 percent, built from six parts: duration, sleep debt, regularity, interruptions, heart rate dip and stages. Example data." style="width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: 12px">
+<div style="border-radius: 30px; padding: 24px 26px; background: linear-gradient(140deg, #1A1B33 0%, #121519 70%); border: 1px solid #2B2E55; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 30px 90px rgba(139,155,255,0.10)">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="display: flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 800"><img src="../assets/icons/moon.svg" alt="" style="width: 18px; height: 18px">Sleep score</span><span style="font-size: 12px; font-weight: 800; color: #5E666C; letter-spacing: 0.1em">EXAMPLE</span></div>
+<span style="font-size: 38px; font-weight: 900; line-height: 1">74%</span>
+<div style="display: flex; justify-content: space-between"><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#F5C842;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#24272A;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#24272A;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#24272A;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#24272A;flex:none"></span><span style="width:9px;height:9px;border-radius:50%;background:#24272A;flex:none"></span></div>
+</div>
+<div style="background: #121315; border-radius: 26px; padding: 8px 24px">
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 13px 0; border-top: none">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; color: #F5F7F8">Duration</span><span style="font-size: 13px; color: #8E969C">7 h 12 min of your 8 h need</span></span><span style="font-size: 13px; color: #8E969C; white-space: nowrap"><span style="font-size: 18px; font-weight: 800; color: #F5F7F8">31</span> / 40</span></div>
+<div style="height: 6px; border-radius: 3px; background: #24272A; overflow: hidden"><div class="sbar" style="height:6px;border-radius:3px;background:#8B9BFF;width:78%"></div></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 13px 0; border-top: 1px solid #1E2124">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; color: #F5F7F8">Sleep debt</span><span style="font-size: 13px; color: #8E969C">3 h 20 min short over the 14 nights before</span></span><span style="font-size: 13px; color: #8E969C; white-space: nowrap"><span style="font-size: 18px; font-weight: 800; color: #F5F7F8">6</span> / 10</span></div>
+<div style="height: 6px; border-radius: 3px; background: #24272A; overflow: hidden"><div class="sbar" style="height:6px;border-radius:3px;background:#8B9BFF;width:60%"></div></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 13px 0; border-top: 1px solid #1E2124">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; color: #F5F7F8">Regularity</span><span style="font-size: 13px; color: #8E969C">80 of 100</span></span><span style="font-size: 13px; color: #8E969C; white-space: nowrap"><span style="font-size: 18px; font-weight: 800; color: #F5F7F8">12</span> / 15</span></div>
+<div style="height: 6px; border-radius: 3px; background: #24272A; overflow: hidden"><div class="sbar" style="height:6px;border-radius:3px;background:#8B9BFF;width:80%"></div></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 13px 0; border-top: 1px solid #1E2124">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; color: #F5F7F8">Interruptions</span><span style="font-size: 13px; color: #8E969C">2 times, awake 14 min</span></span><span style="font-size: 13px; color: #8E969C; white-space: nowrap"><span style="font-size: 18px; font-weight: 800; color: #F5F7F8">11</span> / 15</span></div>
+<div style="height: 6px; border-radius: 3px; background: #24272A; overflow: hidden"><div class="sbar" style="height:6px;border-radius:3px;background:#8B9BFF;width:73%"></div></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 13px 0; border-top: 1px solid #1E2124">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; color: #F5F7F8">Heart rate dip</span><span style="font-size: 13px; color: #8E969C">16%, usual 14 to 26%</span></span><span style="font-size: 13px; color: #8E969C; white-space: nowrap"><span style="font-size: 18px; font-weight: 800; color: #F5F7F8">11</span> / 15</span></div>
+<div style="height: 6px; border-radius: 3px; background: #24272A; overflow: hidden"><div class="sbar" style="height:6px;border-radius:3px;background:#8B9BFF;width:73%"></div></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 13px 0; border-top: 1px solid #1E2124">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; color: #F5F7F8">Stages</span><span style="font-size: 13px; color: #8E969C">Deep 9%, REM 21%</span></span><span style="font-size: 13px; color: #8E969C; white-space: nowrap"><span style="font-size: 18px; font-weight: 800; color: #F5F7F8">3</span> / 5</span></div>
+<div style="height: 6px; border-radius: 3px; background: #24272A; overflow: hidden"><div class="sbar" style="height:6px;border-radius:3px;background:#8B9BFF;width:60%"></div></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sports" style="border-top: 1px solid #141618; padding: 104px 0" aria-label="Every workout">
+<div class="wrap split">
+<div class="rv" style="display: flex; flex-direction: column; gap: 22px">
+<p class="label" style="color: #F5C842">Every workout</p>
+<h2 class="h2">Whatever you train.</h2>
+<p class="body">Every workout your Watch records lands in Throttle with heart rate, zones, effort and the weather. Slide your finger over a chart and it shows you that exact moment. Pro adds how fast your heart rate drops after you stop.</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">Strength</span><span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">HIIT</span><span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">Cycling</span><span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">Swimming</span><span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">Hiking</span><span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">Rowing</span><span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">Yoga</span><span style="font-size: 14px; font-weight: 800; color: #D6DBDE; background: #17191B; padding: 8px 14px; border-radius: 999px">Walking</span>
+</div>
+</div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 14px">
+<div role="img" aria-label="Animation: the heart rate chart of an interval workout, a line in the zone colours. A marker slides across it and the chart lights up to that point, showing the time, heart rate and zone. Example data." style="background: #0E0F10; border: 1px solid #1E2124; border-radius: 30px; padding: 26px 24px 20px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 30px 90px rgba(245,200,66,0.06)">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 17px; font-weight: 900">Heart rate</span><span style="font-size: 12px; font-weight: 800; color: #5E666C; letter-spacing: 0.1em">EXAMPLE</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center">
+<div><div style="font-size: 26px; font-weight: 900">155</div><div style="font-size: 12px; color: #8E969C">Avg bpm</div></div>
+<div><div style="font-size: 26px; font-weight: 900">185</div><div style="font-size: 12px; color: #8E969C">Max bpm</div></div>
+<div><div style="font-size: 26px; font-weight: 900">Zone 5</div><div style="font-size: 12px; color: #8E969C">Most time</div></div>
+</div>
+<div style="position: relative; height: 200px; margin-top: 40px">
+<span style="position: absolute; right: 0; top: 41px; font-size: 11px; font-weight: 700; color: #5E666C">168</span><span style="position: absolute; right: 0; top: 68px; font-size: 11px; font-weight: 700; color: #5E666C">155</span><span style="position: absolute; right: 0; top: 98px; font-size: 11px; font-weight: 700; color: #5E666C">140</span><span style="position: absolute; right: 0; top: 129px; font-size: 11px; font-weight: 700; color: #5E666C">125</span>
+<div style="position: absolute; left: 0; right: 36px; top: 0; bottom: 0">
+<svg viewBox="0 0 640 220" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.22" aria-hidden="true"><defs>
+<linearGradient id="hz" gradientUnits="userSpaceOnUse" x1="0" y1="15" x2="0" y2="205"><stop offset="0.17" stop-color="#F2604A"></stop><stop offset="0.23" stop-color="#F5C842"></stop><stop offset="0.33" stop-color="#F5C842"></stop><stop offset="0.38" stop-color="#A8D95B"></stop><stop offset="0.50" stop-color="#A8D95B"></stop><stop offset="0.56" stop-color="#6CD3F2"></stop><stop offset="0.68" stop-color="#6CD3F2"></stop><stop offset="0.74" stop-color="#8E969C"></stop></linearGradient>
+<linearGradient id="hza" gradientUnits="userSpaceOnUse" x1="0" y1="15" x2="0" y2="220"><stop offset="0" stop-color="#F5C842" stop-opacity="0.30"></stop><stop offset="0.5" stop-color="#6CD3F2" stop-opacity="0.12"></stop><stop offset="1" stop-color="#6CD3F2" stop-opacity="0"></stop></linearGradient>
+</defs>
+<path d="M0.0 198.3 L4.2 198.3 L8.4 193.8 L12.6 193.8 L16.8 187.1 L21.1 184.9 L25.3 189.4 L29.5 187.1 L33.7 184.9 L37.9 187.1 L42.1 178.2 L46.3 171.5 L50.5 164.8 L54.7 155.8 L58.9 153.6 L63.2 151.4 L67.4 151.4 L71.6 137.9 L75.8 140.2 L80.0 142.4 L84.2 140.2 L88.4 144.6 L92.6 135.7 L96.8 131.2 L101.1 97.7 L105.3 79.8 L109.5 68.6 L113.7 55.2 L117.9 53.0 L122.1 48.5 L126.3 53.0 L130.5 55.2 L134.7 50.8 L138.9 61.9 L143.2 55.2 L147.4 48.5 L151.6 66.4 L155.8 82.1 L160.0 93.2 L164.2 104.4 L168.4 115.6 L172.6 122.3 L176.8 120.1 L181.1 91.0 L185.3 77.6 L189.5 64.2 L193.7 53.0 L197.9 41.8 L202.1 37.4 L206.3 39.6 L210.5 35.1 L214.7 37.4 L218.9 41.8 L223.2 37.4 L227.4 39.6 L231.6 66.4 L235.8 84.3 L240.0 91.0 L244.2 102.2 L248.4 108.9 L252.6 108.9 L256.8 111.1 L261.1 79.8 L265.3 66.4 L269.5 59.7 L273.7 53.0 L277.9 44.1 L282.1 44.1 L286.3 48.5 L290.5 46.3 L294.7 44.1 L298.9 28.4 L303.2 30.6 L307.4 32.9 L311.6 57.5 L315.8 77.6 L320.0 88.8 L324.2 102.2 L328.4 117.8 L332.6 120.1 L336.8 122.3 L341.1 88.8 L345.3 70.9 L349.5 53.0 L353.7 44.1 L357.9 32.9 L362.1 28.4 L366.3 28.4 L370.5 32.9 L374.7 30.6 L378.9 37.4 L383.2 32.9 L387.4 30.6 L391.6 55.2 L395.8 70.9 L400.0 79.8 L404.2 91.0 L408.4 95.5 L412.6 97.7 L416.8 102.2 L421.1 75.4 L425.3 59.7 L429.5 50.8 L433.7 41.8 L437.9 32.9 L442.1 32.9 L446.3 35.1 L450.5 28.4 L454.7 32.9 L458.9 21.7 L463.2 15.0 L467.4 19.5 L471.6 48.5 L475.8 66.4 L480.0 79.8 L484.2 97.7 L488.4 104.4 L492.6 106.6 L496.8 106.6 L501.1 70.9 L505.3 53.0 L509.5 39.6 L513.7 30.6 L517.9 19.5 L522.1 21.7 L526.3 26.2 L530.5 26.2 L534.7 17.2 L538.9 15.0 L543.2 21.7 L547.4 21.7 L551.6 37.4 L555.8 50.8 L560.0 59.7 L564.2 73.1 L568.4 79.8 L572.6 88.8 L576.8 95.5 L581.1 99.9 L585.3 108.9 L589.5 113.4 L593.7 113.4 L597.9 106.6 L602.1 106.6 L606.3 111.1 L610.5 111.1 L614.7 117.8 L618.9 113.4 L623.2 113.4 L627.4 117.8 L631.6 115.6 L635.8 117.8 L640.0 120.1 L640 220 L0 220 Z" fill="url(#hza)"></path>
+<path d="M0.0 198.3 L4.2 198.3 L8.4 193.8 L12.6 193.8 L16.8 187.1 L21.1 184.9 L25.3 189.4 L29.5 187.1 L33.7 184.9 L37.9 187.1 L42.1 178.2 L46.3 171.5 L50.5 164.8 L54.7 155.8 L58.9 153.6 L63.2 151.4 L67.4 151.4 L71.6 137.9 L75.8 140.2 L80.0 142.4 L84.2 140.2 L88.4 144.6 L92.6 135.7 L96.8 131.2 L101.1 97.7 L105.3 79.8 L109.5 68.6 L113.7 55.2 L117.9 53.0 L122.1 48.5 L126.3 53.0 L130.5 55.2 L134.7 50.8 L138.9 61.9 L143.2 55.2 L147.4 48.5 L151.6 66.4 L155.8 82.1 L160.0 93.2 L164.2 104.4 L168.4 115.6 L172.6 122.3 L176.8 120.1 L181.1 91.0 L185.3 77.6 L189.5 64.2 L193.7 53.0 L197.9 41.8 L202.1 37.4 L206.3 39.6 L210.5 35.1 L214.7 37.4 L218.9 41.8 L223.2 37.4 L227.4 39.6 L231.6 66.4 L235.8 84.3 L240.0 91.0 L244.2 102.2 L248.4 108.9 L252.6 108.9 L256.8 111.1 L261.1 79.8 L265.3 66.4 L269.5 59.7 L273.7 53.0 L277.9 44.1 L282.1 44.1 L286.3 48.5 L290.5 46.3 L294.7 44.1 L298.9 28.4 L303.2 30.6 L307.4 32.9 L311.6 57.5 L315.8 77.6 L320.0 88.8 L324.2 102.2 L328.4 117.8 L332.6 120.1 L336.8 122.3 L341.1 88.8 L345.3 70.9 L349.5 53.0 L353.7 44.1 L357.9 32.9 L362.1 28.4 L366.3 28.4 L370.5 32.9 L374.7 30.6 L378.9 37.4 L383.2 32.9 L387.4 30.6 L391.6 55.2 L395.8 70.9 L400.0 79.8 L404.2 91.0 L408.4 95.5 L412.6 97.7 L416.8 102.2 L421.1 75.4 L425.3 59.7 L429.5 50.8 L433.7 41.8 L437.9 32.9 L442.1 32.9 L446.3 35.1 L450.5 28.4 L454.7 32.9 L458.9 21.7 L463.2 15.0 L467.4 19.5 L471.6 48.5 L475.8 66.4 L480.0 79.8 L484.2 97.7 L488.4 104.4 L492.6 106.6 L496.8 106.6 L501.1 70.9 L505.3 53.0 L509.5 39.6 L513.7 30.6 L517.9 19.5 L522.1 21.7 L526.3 26.2 L530.5 26.2 L534.7 17.2 L538.9 15.0 L543.2 21.7 L547.4 21.7 L551.6 37.4 L555.8 50.8 L560.0 59.7 L564.2 73.1 L568.4 79.8 L572.6 88.8 L576.8 95.5 L581.1 99.9 L585.3 108.9 L589.5 113.4 L593.7 113.4 L597.9 106.6 L602.1 106.6 L606.3 111.1 L610.5 111.1 L614.7 117.8 L618.9 113.4 L623.2 113.4 L627.4 117.8 L631.6 115.6 L635.8 117.8 L640.0 120.1" fill="none" stroke="url(#hz)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+<div style="position: absolute; left: 0; right: 0; top: 75px; border-top: 1.5px dashed #34393D"></div>
+<svg viewBox="0 0 640 220" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;clip-path:inset(0 22.4% 0 0)" aria-hidden="true" data-bind="[[&quot;style&quot;,&quot;{{chartLit}}&quot;]]">
+<path d="M0.0 198.3 L4.2 198.3 L8.4 193.8 L12.6 193.8 L16.8 187.1 L21.1 184.9 L25.3 189.4 L29.5 187.1 L33.7 184.9 L37.9 187.1 L42.1 178.2 L46.3 171.5 L50.5 164.8 L54.7 155.8 L58.9 153.6 L63.2 151.4 L67.4 151.4 L71.6 137.9 L75.8 140.2 L80.0 142.4 L84.2 140.2 L88.4 144.6 L92.6 135.7 L96.8 131.2 L101.1 97.7 L105.3 79.8 L109.5 68.6 L113.7 55.2 L117.9 53.0 L122.1 48.5 L126.3 53.0 L130.5 55.2 L134.7 50.8 L138.9 61.9 L143.2 55.2 L147.4 48.5 L151.6 66.4 L155.8 82.1 L160.0 93.2 L164.2 104.4 L168.4 115.6 L172.6 122.3 L176.8 120.1 L181.1 91.0 L185.3 77.6 L189.5 64.2 L193.7 53.0 L197.9 41.8 L202.1 37.4 L206.3 39.6 L210.5 35.1 L214.7 37.4 L218.9 41.8 L223.2 37.4 L227.4 39.6 L231.6 66.4 L235.8 84.3 L240.0 91.0 L244.2 102.2 L248.4 108.9 L252.6 108.9 L256.8 111.1 L261.1 79.8 L265.3 66.4 L269.5 59.7 L273.7 53.0 L277.9 44.1 L282.1 44.1 L286.3 48.5 L290.5 46.3 L294.7 44.1 L298.9 28.4 L303.2 30.6 L307.4 32.9 L311.6 57.5 L315.8 77.6 L320.0 88.8 L324.2 102.2 L328.4 117.8 L332.6 120.1 L336.8 122.3 L341.1 88.8 L345.3 70.9 L349.5 53.0 L353.7 44.1 L357.9 32.9 L362.1 28.4 L366.3 28.4 L370.5 32.9 L374.7 30.6 L378.9 37.4 L383.2 32.9 L387.4 30.6 L391.6 55.2 L395.8 70.9 L400.0 79.8 L404.2 91.0 L408.4 95.5 L412.6 97.7 L416.8 102.2 L421.1 75.4 L425.3 59.7 L429.5 50.8 L433.7 41.8 L437.9 32.9 L442.1 32.9 L446.3 35.1 L450.5 28.4 L454.7 32.9 L458.9 21.7 L463.2 15.0 L467.4 19.5 L471.6 48.5 L475.8 66.4 L480.0 79.8 L484.2 97.7 L488.4 104.4 L492.6 106.6 L496.8 106.6 L501.1 70.9 L505.3 53.0 L509.5 39.6 L513.7 30.6 L517.9 19.5 L522.1 21.7 L526.3 26.2 L530.5 26.2 L534.7 17.2 L538.9 15.0 L543.2 21.7 L547.4 21.7 L551.6 37.4 L555.8 50.8 L560.0 59.7 L564.2 73.1 L568.4 79.8 L572.6 88.8 L576.8 95.5 L581.1 99.9 L585.3 108.9 L589.5 113.4 L593.7 113.4 L597.9 106.6 L602.1 106.6 L606.3 111.1 L610.5 111.1 L614.7 117.8 L618.9 113.4 L623.2 113.4 L627.4 117.8 L631.6 115.6 L635.8 117.8 L640.0 120.1 L640 220 L0 220 Z" fill="url(#hza)"></path>
+<path d="M0.0 198.3 L4.2 198.3 L8.4 193.8 L12.6 193.8 L16.8 187.1 L21.1 184.9 L25.3 189.4 L29.5 187.1 L33.7 184.9 L37.9 187.1 L42.1 178.2 L46.3 171.5 L50.5 164.8 L54.7 155.8 L58.9 153.6 L63.2 151.4 L67.4 151.4 L71.6 137.9 L75.8 140.2 L80.0 142.4 L84.2 140.2 L88.4 144.6 L92.6 135.7 L96.8 131.2 L101.1 97.7 L105.3 79.8 L109.5 68.6 L113.7 55.2 L117.9 53.0 L122.1 48.5 L126.3 53.0 L130.5 55.2 L134.7 50.8 L138.9 61.9 L143.2 55.2 L147.4 48.5 L151.6 66.4 L155.8 82.1 L160.0 93.2 L164.2 104.4 L168.4 115.6 L172.6 122.3 L176.8 120.1 L181.1 91.0 L185.3 77.6 L189.5 64.2 L193.7 53.0 L197.9 41.8 L202.1 37.4 L206.3 39.6 L210.5 35.1 L214.7 37.4 L218.9 41.8 L223.2 37.4 L227.4 39.6 L231.6 66.4 L235.8 84.3 L240.0 91.0 L244.2 102.2 L248.4 108.9 L252.6 108.9 L256.8 111.1 L261.1 79.8 L265.3 66.4 L269.5 59.7 L273.7 53.0 L277.9 44.1 L282.1 44.1 L286.3 48.5 L290.5 46.3 L294.7 44.1 L298.9 28.4 L303.2 30.6 L307.4 32.9 L311.6 57.5 L315.8 77.6 L320.0 88.8 L324.2 102.2 L328.4 117.8 L332.6 120.1 L336.8 122.3 L341.1 88.8 L345.3 70.9 L349.5 53.0 L353.7 44.1 L357.9 32.9 L362.1 28.4 L366.3 28.4 L370.5 32.9 L374.7 30.6 L378.9 37.4 L383.2 32.9 L387.4 30.6 L391.6 55.2 L395.8 70.9 L400.0 79.8 L404.2 91.0 L408.4 95.5 L412.6 97.7 L416.8 102.2 L421.1 75.4 L425.3 59.7 L429.5 50.8 L433.7 41.8 L437.9 32.9 L442.1 32.9 L446.3 35.1 L450.5 28.4 L454.7 32.9 L458.9 21.7 L463.2 15.0 L467.4 19.5 L471.6 48.5 L475.8 66.4 L480.0 79.8 L484.2 97.7 L488.4 104.4 L492.6 106.6 L496.8 106.6 L501.1 70.9 L505.3 53.0 L509.5 39.6 L513.7 30.6 L517.9 19.5 L522.1 21.7 L526.3 26.2 L530.5 26.2 L534.7 17.2 L538.9 15.0 L543.2 21.7 L547.4 21.7 L551.6 37.4 L555.8 50.8 L560.0 59.7 L564.2 73.1 L568.4 79.8 L572.6 88.8 L576.8 95.5 L581.1 99.9 L585.3 108.9 L589.5 113.4 L593.7 113.4 L597.9 106.6 L602.1 106.6 L606.3 111.1 L610.5 111.1 L614.7 117.8 L618.9 113.4 L623.2 113.4 L627.4 117.8 L631.6 115.6 L635.8 117.8 L640.0 120.1" fill="none" stroke="url(#hz)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+<div class="mv" style="position:absolute;top:0;bottom:0;width:1.5px;background:rgba(245,247,248,0.45);left:77.6%" data-bind="[[&quot;style&quot;,&quot;{{cursorLine}}&quot;]]"></div>
+<div class="mv" style="position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;border:2px solid #F5F7F8;background:#A8D95B;box-shadow:0 0 18px #A8D95B;left:77.6%;top:97.0px" data-bind="[[&quot;style&quot;,&quot;{{cursorDot}}&quot;]]"></div>
+<div class="mv" style="position:absolute;top:-46px;right:6.4%;display:flex;flex-direction:column;background:#17191B;border:1px solid #2A2F33;border-radius:12px;padding:6px 12px;white-space:nowrap" data-bind="[[&quot;style&quot;,&quot;{{tipStyle}}&quot;]]"><span style="font-size: 12px; color: #8E969C"><span data-bind="[[&quot;text&quot;,&quot;{{tipTime}}&quot;]]">29:18</span></span><span style="font-size:15px;font-weight:900;color:#A8D95B" data-bind="[[&quot;style&quot;,&quot;{{tipBpmStyle}}&quot;]]"><span data-bind="[[&quot;text&quot;,&quot;{{tipBpm}} bpm \u00b7 {{tipZone}}&quot;]]">144 bpm · Zone 3</span></span></div>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #5E666C; margin-right: 36px"><span>0:00</span><span>38:00</span></div>
+</div>
+
+<div role="img" aria-label="Heart rate recovery, part of Pro: 25 beats per minute down in the first minute after the workout, from 138 to 113. Usual after similar workouts: 22. Example data." style="background: #0E0F10; border: 1px solid #1E2124; border-radius: 26px; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 200px; flex: 1 1 200px">
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap"><span style="font-size: 17px; font-weight: 900">Heart rate recovery</span><span style="font-size: 11px; font-weight: 900; letter-spacing: 0.12em; color: #8EA8FF; background: rgba(79,123,255,0.14); padding: 6px 10px; border-radius: 999px">PRO</span></div>
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 34px; font-weight: 900; line-height: 1">25</span><span style="font-size: 15px; color: #8E969C">bpm down in the first minute</span></div>
+<span style="font-size: 13px; color: #8E969C">Usual after similar workouts: 22</span>
+</div>
+<div style="position: relative; width: 170px; height: 84px; flex: none">
+<svg viewBox="0 0 170 84" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true">
+<path d="M14 22 C 44 24, 62 44, 92 54 S 140 62, 156 62" fill="none" stroke="#3DDC97" stroke-width="2.5" stroke-linecap="round"></path>
+<path d="M14 22 V70 M156 62 V70" stroke="#2A2F33" stroke-width="1.5" stroke-dasharray="3 3"></path>
+<circle cx="14" cy="22" r="5" fill="#0E0F10" stroke="#A8D95B" stroke-width="2.5"></circle>
+<circle cx="156" cy="62" r="5" fill="#0E0F10" stroke="#3DDC97" stroke-width="2.5"></circle>
+</svg>
+<span style="position: absolute; left: 26px; top: 12px; font-size: 13px; font-weight: 800">138</span>
+<span style="position: absolute; right: 26px; top: 38px; font-size: 13px; font-weight: 800">113</span>
+<span style="position: absolute; left: 2px; bottom: -6px; font-size: 11px; font-weight: 700; color: #5E666C">End</span>
+<span style="position: absolute; right: 0; bottom: -6px; font-size: 11px; font-weight: 700; color: #5E666C">1 min</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="running" style="border-top: 1px solid #141618; padding: 104px 0" aria-label="Running">
+<div class="wrap">
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; max-width: 760px; margin-bottom: 44px">
+<p class="label" style="color: #6CB8F5">Running</p>
+<h2 class="h2">For runners.</h2>
+<p class="body">Every run comes in with heart rate, zones, weather and the route map, free. Pro lets you replay the run with your heart rate along the way, and shows power, cadence, stride and ground contact next to your own usual range. It doesn't do training plans. It tells you how your body is handling yours.</p>
+</div>
+<div class="pro">
+<div class="card rv" style="background: #0E0F10; border: 1px solid #1E2124; border-radius: 30px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 30px 90px rgba(108,184,245,0.07)">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 17px; font-weight: 900">Workout replay</span><span style="font-size: 11px; font-weight: 900; letter-spacing: 0.12em; color: #8EA8FF; background: rgba(79,123,255,0.14); padding: 6px 10px; border-radius: 999px">PRO</span></div>
+<div role="img" aria-label="Animation: a run replayed at speed on a map. A glowing dot in the colour of the heart rate zone runs the route, while time, pace, heart rate and elevation follow it and the elevation profile fills. Made-up route." style="display: flex; flex-direction: column; gap: 12px">
+<div style="border-radius: 22px; overflow: hidden; background: #101416">
+<svg viewBox="0 0 440 260" style="width: 100%; height: auto; display: block" aria-hidden="true">
+<defs><linearGradient id="ez" x1="0" y1="0" x2="1" y2="0"><stop offset="0.35" stop-color="#6CD3F2"></stop><stop offset="0.35" stop-color="#A8D95B"></stop><stop offset="0.8" stop-color="#A8D95B"></stop><stop offset="0.8" stop-color="#F5C842"></stop></linearGradient></defs>
+<path d="M0 60H440M0 130H440M0 240H440M90 0V260M250 0V260M400 0V260" stroke="#1A2023" stroke-width="10"></path>
+<path d="M0 95H440M0 175H440M170 0V260M330 0V260" stroke="#161B1E" stroke-width="4"></path>
+<path d="M255 135 h70 v40 h-70 z" fill="#14231B"></path>
+<path d="M0 0 h85 v55 h-85 z M405 135 h35 v100 h-35 z" fill="#111A22"></path>
+<path d="M60 200 L112 150 L172 158 L212 100 L292 80 L352 122 L380 182 L312 216 L232 204 L152 226 L60 200" fill="none" stroke="#2C3338" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="rt rt3" pathLength="1" d="M60 200 L112 150 L172 158 L212 100 L292 80 L352 122 L380 182 L312 216 L232 204 L152 226 L60 200" fill="none" stroke="#F5C842" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="rt rt2" pathLength="1" d="M60 200 L112 150 L172 158 L212 100 L292 80 L352 122 L380 182 L312 216 L232 204 L152 226 L60 200" fill="none" stroke="#A8D95B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="rt rt1" pathLength="1" d="M60 200 L112 150 L172 158 L212 100 L292 80 L352 122 L380 182 L312 216 L232 204 L152 226 L60 200" fill="none" stroke="#6CD3F2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="60" cy="200" r="7" fill="#101416" stroke="#F5F7F8" stroke-width="2.5"></circle><circle cx="60" cy="200" r="3" fill="#3DDC97"></circle>
+<g class="rdot"><circle class="rcol" r="15" opacity="0.28"></circle><circle class="rcol" r="7" stroke="#101416" stroke-width="1.5"></circle></g>
+</svg>
+</div>
+<div class="rstats">
+<div style="background: #121315; border-radius: 14px; padding: 10px 12px"><div style="font-size: 11px; color: #8E969C">Time</div><div style="font-size: 18px; font-weight: 900"><span data-bind="[[&quot;text&quot;,&quot;{{runTime}}&quot;]]">27:05</span></div></div>
+<div style="background: #121315; border-radius: 14px; padding: 10px 12px"><div style="font-size: 11px; color: #8E969C">Pace</div><div style="font-size: 18px; font-weight: 900"><span data-bind="[[&quot;text&quot;,&quot;{{runPace}}&quot;]]">4:56 /km</span></div></div>
+<div style="background: #121315; border-radius: 14px; padding: 10px 12px"><div style="font-size: 11px; color: #8E969C">Heart rate</div><div style="font-size:18px;font-weight:900;color:#F5C842" data-bind="[[&quot;style&quot;,&quot;{{runBpmStyle}}&quot;]]"><span data-bind="[[&quot;text&quot;,&quot;{{runBpm}}&quot;]]">158 bpm</span></div></div>
+<div style="background: #121315; border-radius: 14px; padding: 10px 12px"><div style="font-size: 11px; color: #8E969C">Elevation</div><div style="font-size: 18px; font-weight: 900"><span data-bind="[[&quot;text&quot;,&quot;{{runElev}}&quot;]]">13 m</span></div></div>
+</div>
+<div style="position: relative; height: 50px">
+<svg viewBox="0 0 400 50" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true"><path d="M0.0 20.0 L6.8 18.1 L13.6 16.6 L20.3 15.5 L27.1 14.8 L33.9 14.6 L40.7 14.8 L47.5 15.2 L54.2 16.0 L61.0 16.9 L67.8 17.9 L74.6 18.9 L81.4 19.9 L88.1 20.7 L94.9 21.3 L101.7 21.6 L108.5 21.7 L115.3 21.5 L122.0 21.0 L128.8 20.3 L135.6 19.4 L142.4 18.5 L149.2 17.5 L155.9 16.5 L162.7 15.8 L169.5 15.2 L176.3 15.0 L183.1 15.2 L189.8 15.7 L196.6 16.7 L203.4 18.1 L210.2 19.9 L216.9 22.0 L223.7 24.4 L230.5 27.1 L237.3 29.8 L244.1 32.5 L250.8 35.1 L257.6 37.5 L264.4 39.7 L271.2 41.4 L278.0 42.7 L284.7 43.5 L291.5 43.8 L298.3 43.6 L305.1 42.9 L311.9 41.8 L318.6 40.3 L325.4 38.5 L332.2 36.6 L339.0 34.5 L345.8 32.5 L352.5 30.6 L359.3 28.9 L366.1 27.4 L372.9 26.2 L379.7 25.3 L386.4 24.7 L393.2 24.5 L400.0 24.5 L400 50 L0 50 Z" fill="#24272A"></path></svg>
+<svg viewBox="0 0 400 50" preserveAspectRatio="none" class="elit" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true"><path d="M0.0 20.0 L6.8 18.1 L13.6 16.6 L20.3 15.5 L27.1 14.8 L33.9 14.6 L40.7 14.8 L47.5 15.2 L54.2 16.0 L61.0 16.9 L67.8 17.9 L74.6 18.9 L81.4 19.9 L88.1 20.7 L94.9 21.3 L101.7 21.6 L108.5 21.7 L115.3 21.5 L122.0 21.0 L128.8 20.3 L135.6 19.4 L142.4 18.5 L149.2 17.5 L155.9 16.5 L162.7 15.8 L169.5 15.2 L176.3 15.0 L183.1 15.2 L189.8 15.7 L196.6 16.7 L203.4 18.1 L210.2 19.9 L216.9 22.0 L223.7 24.4 L230.5 27.1 L237.3 29.8 L244.1 32.5 L250.8 35.1 L257.6 37.5 L264.4 39.7 L271.2 41.4 L278.0 42.7 L284.7 43.5 L291.5 43.8 L298.3 43.6 L305.1 42.9 L311.9 41.8 L318.6 40.3 L325.4 38.5 L332.2 36.6 L339.0 34.5 L345.8 32.5 L352.5 30.6 L359.3 28.9 L366.1 27.4 L372.9 26.2 L379.7 25.3 L386.4 24.7 L393.2 24.5 L400.0 24.5 L400 50 L0 50 Z" fill="url(#ez)"></path></svg>
+<div class="ecur" style="position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; border-radius: 1px; background: #F5F7F8"></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="width: 38px; height: 38px; border-radius: 50%; background: #17191B; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11M11 1.5v11" stroke="#F5F7F8" stroke-width="3" stroke-linecap="round"></path></svg></span>
+<div style="display: flex; background: #17191B; border-radius: 12px; padding: 3px; gap: 2px">
+<span style="font-size: 13px; font-weight: 800; color: #8E969C; padding: 6px 16px; border-radius: 9px">10×</span>
+<span style="font-size: 13px; font-weight: 800; color: #8E969C; padding: 6px 16px; border-radius: 9px">30×</span>
+<span style="font-size: 13px; font-weight: 900; color: #F5F7F8; background: #34393D; padding: 6px 16px; border-radius: 9px">60×</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card rv" style="background: #0E0F10; border: 1px solid #1E2124; border-radius: 30px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 17px; font-weight: 900">Running dynamics</span><span style="font-size: 11px; font-weight: 900; letter-spacing: 0.12em; color: #8EA8FF; background: rgba(79,123,255,0.14); padding: 6px 10px; border-radius: 999px">PRO</span></div>
+<div role="img" aria-label="Four running gauges, each with a usual range. Example data." style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; flex: 1">
+
+<div style="background: #121315; border-radius: 22px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; flex: 1 1 180px">
+<span style="align-self: flex-start; padding-left: 8px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800"><span style="width:10px;height:10px;border-radius:50%;background:#F28BC4;flex:none"></span>Cadence</span>
+<div style="position: relative; width: 150px; height: 118px">
+<span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.4px;top:108.1px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.2px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.4px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:30.1px;top:24.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:41.6px;top:15.3px;background:#F28BC4;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:55.9px;top:9.8px;background:#F28BC4;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:71.0px;top:8.0px;background:#F28BC4;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:15px;height:15px;left:82.6px;top:6.3px;background:#F28BC4;box-shadow:0 0 0 2px #F5F7F8"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:100.4px;top:15.3px;background:#F28BC4;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:112.9px;top:23.9px;background:#F28BC4;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:124.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:131.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.6px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:130.8px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:123.6px;top:108.1px;background:#2A2D30"></span>
+<div style="position: absolute; left: 0; right: 0; top: 50px; text-align: center; font-size: 30px; font-weight: 800; line-height: 1">172</div>
+<div style="position: absolute; left: 0; right: 0; top: 84px; text-align: center; font-size: 13px; color: #8E969C">spm</div>
+</div>
+<span style="font-size: 13px; color: #8E969C">Usual 166 to 176</span>
+</div>
+
+<div style="background: #121315; border-radius: 22px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; flex: 1 1 180px">
+<span style="align-self: flex-start; padding-left: 8px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800"><span style="width:10px;height:10px;border-radius:50%;background:#6CB8F5;flex:none"></span>Stride length</span>
+<div style="position: relative; width: 150px; height: 118px">
+<span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.4px;top:108.1px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.2px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.4px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:29.1px;top:23.9px;background:#6CB8F5;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:41.6px;top:15.3px;background:#6CB8F5;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:55.9px;top:9.8px;background:#6CB8F5;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:15px;height:15px;left:67.5px;top:4.5px;background:#6CB8F5;box-shadow:0 0 0 2px #F5F7F8"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:86.1px;top:9.8px;background:#6CB8F5;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:100.4px;top:15.3px;background:#6CB8F5;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:113.9px;top:24.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:124.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:131.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.6px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:130.8px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:123.6px;top:108.1px;background:#2A2D30"></span>
+<div style="position: absolute; left: 0; right: 0; top: 50px; text-align: center; font-size: 30px; font-weight: 800; line-height: 1">1.18</div>
+<div style="position: absolute; left: 0; right: 0; top: 84px; text-align: center; font-size: 13px; color: #8E969C">m</div>
+</div>
+<span style="font-size: 13px; color: #8E969C">Usual 1.08 to 1.24</span>
+</div>
+
+<div style="background: #121315; border-radius: 22px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; flex: 1 1 180px">
+<span style="align-self: flex-start; padding-left: 8px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800"><span style="width:10px;height:10px;border-radius:50%;background:#F2A65A;flex:none"></span>Ground contact</span>
+<div style="position: relative; width: 150px; height: 118px">
+<span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.4px;top:108.1px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.2px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.4px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:30.1px;top:24.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:41.6px;top:15.3px;background:#F2A65A;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:15px;height:15px;left:52.4px;top:6.3px;background:#F2A65A;box-shadow:0 0 0 2px #F5F7F8"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:71.0px;top:8.0px;background:#F2A65A;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:86.1px;top:9.8px;background:#F2A65A;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:100.4px;top:15.3px;background:#F2A65A;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:112.9px;top:23.9px;background:#F2A65A;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:124.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:131.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.6px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:130.8px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:123.6px;top:108.1px;background:#2A2D30"></span>
+<div style="position: absolute; left: 0; right: 0; top: 50px; text-align: center; font-size: 30px; font-weight: 800; line-height: 1">248</div>
+<div style="position: absolute; left: 0; right: 0; top: 84px; text-align: center; font-size: 13px; color: #8E969C">ms</div>
+</div>
+<span style="font-size: 13px; color: #8E969C">Usual 240 to 262</span>
+</div>
+
+<div style="background: #121315; border-radius: 22px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; flex: 1 1 180px">
+<span style="align-self: flex-start; padding-left: 8px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800"><span style="width:10px;height:10px;border-radius:50%;background:#7BD8B0;flex:none"></span>Vertical oscillation</span>
+<div style="position: relative; width: 150px; height: 118px">
+<span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.4px;top:108.1px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.2px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:9.4px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:13.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:20.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:30.1px;top:24.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:41.6px;top:15.3px;background:#7BD8B0;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:55.9px;top:9.8px;background:#7BD8B0;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:15px;height:15px;left:67.5px;top:4.5px;background:#7BD8B0;box-shadow:0 0 0 2px #F5F7F8"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:86.1px;top:9.8px;background:#7BD8B0;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:100.4px;top:15.3px;background:#7BD8B0;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:8px;height:8px;left:112.9px;top:23.9px;background:#7BD8B0;opacity:0.55"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:124.0px;top:36.4px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:131.0px;top:49.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.6px;top:64.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:134.5px;top:79.9px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:130.8px;top:94.7px;background:#2A2D30"></span><span style="position:absolute;border-radius:50%;width:6px;height:6px;left:123.6px;top:108.1px;background:#2A2D30"></span>
+<div style="position: absolute; left: 0; right: 0; top: 50px; text-align: center; font-size: 30px; font-weight: 800; line-height: 1">8.9</div>
+<div style="position: absolute; left: 0; right: 0; top: 84px; text-align: center; font-size: 13px; color: #8E969C">cm</div>
+</div>
+<span style="font-size: 13px; color: #8E969C">Usual 8.4 to 9.6</span>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="goals" style="border-top: 1px solid #141618; padding: 104px 0" aria-label="Goals">
+<div class="wrap split">
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 12px"><p class="label" style="color: #F2A55F">Goals</p><span style="font-size: 11px; font-weight: 900; letter-spacing: 0.12em; color: #8EA8FF; background: rgba(79,123,255,0.14); padding: 6px 10px; border-radius: 999px">PRO</span></div>
+<h2 class="h2">Set a goal. See how often you hit it.</h2>
+<p class="body">Steps, running distance, intensity minutes, workouts, active energy, flights climbed, daylight or food. Per day, week, month or year. Next to the field you see your own average, so you pick a number that fits you.</p>
+<p class="body">Every goal gets its own colour, so you can tell them apart at a glance. They also live on your Home Screen as a widget and on your Watch. You get a message when you reach one, never one that says you're behind.</p>
+</div>
+<div class="rv" role="img" aria-label="Animation: three goal cards, for steps, running and intensity minutes, each with a bar of dots. The colour of the running goal changes as a colour is picked from six. Example data." style="display: flex; flex-direction: column; gap: 14px">
+
+<div style="background: #121315; border: 1px solid #1E2124; border-radius: 26px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><div style="display: flex; align-items: center; gap: 10px"><img src="../assets/icons/steps.svg" alt="" style="width: 20px; height: 20px"><span style="font-size: 17px; font-weight: 800">Steps</span></div><span style="font-size: 17px; color: #8E969C">84%</span></div>
+<span style="font-size: 32px; font-weight: 800; line-height: 1; letter-spacing: -0.01em">8,420</span>
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:200ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:245ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:290ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:335ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:380ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:425ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:470ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:515ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:560ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:605ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:650ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:695ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:740ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:785ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:830ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:875ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5F7F8;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:920ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:965ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1010ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1055ms"></span></div>
+<span style="font-size: 14px; color: #8E969C">Today so far, goal 10,000</span>
+</div>
+
+<div style="background: #121315; border: 1px solid #1E2124; border-radius: 26px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><div style="display: flex; align-items: center; gap: 10px"><img src="../assets/icons/goal-run.svg" alt="" style="width: 20px; height: 20px"><span style="font-size: 17px; font-weight: 800">Running</span></div><span style="font-size: 17px; color: #8E969C">73%</span></div>
+<span style="font-size: 32px; font-weight: 800; line-height: 1; letter-spacing: -0.01em">22.0 km</span>
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:500ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.0.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:545ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.1.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:590ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.2.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:635ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.3.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:680ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.4.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:725ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.5.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:770ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.6.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:815ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.7.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:860ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.8.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:905ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.9.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:950ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.10.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:995ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.11.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1040ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.12.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1085ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.13.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#F28B9B;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1130ms" data-bind="[[&quot;style&quot;,&quot;{{goals.1.dots.14.style}}&quot;]]"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1175ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1220ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1265ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1310ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1355ms"></span></div>
+<span style="font-size: 14px; color: #8E969C">This week so far, goal 30 km</span>
+</div>
+
+<div style="background: #121315; border: 1px solid #1E2124; border-radius: 26px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><div style="display: flex; align-items: center; gap: 10px"><img src="../assets/icons/steps.svg" alt="" style="width: 20px; height: 20px"><span style="font-size: 17px; font-weight: 800">Intensity minutes</span></div><span style="font-size: 17px; color: #8E969C">78%</span></div>
+<span style="font-size: 32px; font-weight: 800; line-height: 1; letter-spacing: -0.01em">310 min</span>
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:800ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:845ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:890ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:935ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:980ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1025ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1070ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1115ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1160ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1205ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1250ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1295ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1340ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1385ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1430ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#5FD068;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1475ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1520ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1565ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1610ms"></span><span style="width:10px;height:10px;border-radius:50%;background:#24272A;flex:none;animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:1655ms"></span></div>
+<span style="font-size: 14px; color: #8E969C">This week so far, goal 400</span>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px; background: #0E0F10; border: 1px solid #1E2124; border-radius: 22px; flex-wrap: wrap">
+<span style="font-size: 15px; font-weight: 800">Colour</span>
+<div style="display: flex; gap: 14px; align-items: center"><span style="width:22px;height:22px;border-radius:50%;flex:none;background:#F5F7F8;box-shadow:0 0 0 3px #0E0F10,0 0 0 5px rgba(0,0,0,0);transition:box-shadow .3s" data-bind="[[&quot;style&quot;,&quot;{{swatches.0.style}}&quot;]]"></span><span style="width:22px;height:22px;border-radius:50%;flex:none;background:#5FD068;box-shadow:0 0 0 3px #0E0F10,0 0 0 5px rgba(0,0,0,0);transition:box-shadow .3s" data-bind="[[&quot;style&quot;,&quot;{{swatches.1.style}}&quot;]]"></span><span style="width:22px;height:22px;border-radius:50%;flex:none;background:#6CB8F5;box-shadow:0 0 0 3px #0E0F10,0 0 0 5px rgba(0,0,0,0);transition:box-shadow .3s" data-bind="[[&quot;style&quot;,&quot;{{swatches.2.style}}&quot;]]"></span><span style="width:22px;height:22px;border-radius:50%;flex:none;background:#B79CFF;box-shadow:0 0 0 3px #0E0F10,0 0 0 5px rgba(0,0,0,0);transition:box-shadow .3s" data-bind="[[&quot;style&quot;,&quot;{{swatches.3.style}}&quot;]]"></span><span style="width:22px;height:22px;border-radius:50%;flex:none;background:#F2A55F;box-shadow:0 0 0 3px #0E0F10,0 0 0 5px rgba(0,0,0,0);transition:box-shadow .3s" data-bind="[[&quot;style&quot;,&quot;{{swatches.4.style}}&quot;]]"></span><span style="width:22px;height:22px;border-radius:50%;flex:none;background:#F28B9B;box-shadow:0 0 0 3px #0E0F10,0 0 0 5px #F28B9B;transition:box-shadow .3s" data-bind="[[&quot;style&quot;,&quot;{{swatches.5.style}}&quot;]]"></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="journal" style="border-top: 1px solid #141618; padding: 104px 0" aria-label="Journal and Insights">
+<div class="wrap">
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; max-width: 760px; margin-bottom: 44px">
+<div style="display: flex; align-items: center; gap: 12px"><p class="label" style="color: #B79CFF">Journal</p><span style="font-size: 11px; font-weight: 900; letter-spacing: 0.12em; color: #8EA8FF; background: rgba(79,123,255,0.14); padding: 6px 10px; border-radius: 999px">PRO</span></div>
+<h2 class="h2">Tag your day.</h2>
+<p class="body">Caffeine, alcohol, a late meal, sauna, travel. Tap what applies, or let Throttle tag things like a long training by itself. After enough nights, Insights puts your average Recovery after a tag next to your other nights. It shows what goes together. It doesn't claim what causes what.</p>
+</div>
+<div class="pro">
+<div class="rv" style="background: #0E0F10; border: 1px solid #1E2124; border-radius: 28px; padding: 18px 14px 0; overflow: hidden; max-height: 620px"><img src="../assets/journal.png" alt="The Journal in Throttle: tags for last night and today, such as screens before bed, late meal, alcohol, travel, sauna and cold bath." style="display: block; width: 100%; height: auto; border-radius: 18px"></div>
+<div class="rv" style="background: #0E0F10; border: 1px solid #1E2124; border-radius: 28px; padding: 18px 14px 0; overflow: hidden; max-height: 620px"><img src="../assets/insights.png" alt="Insights in Throttle: tags sorted into clear difference, not certain yet and not enough nights yet, each with the difference in Recovery points." style="display: block; width: 100%; height: auto; border-radius: 18px"></div>
+</div>
+</div>
+</section>
+
+<section style="border-top: 1px solid #141618; padding: 120px 0; position: relative" aria-label="Download">
+<div class="glow" aria-hidden="true" style="position: absolute; left: 20%; right: 20%; top: 10%; bottom: 10%; background: radial-gradient(closest-side, rgba(79,123,255,0.20), rgba(0,0,0,0)); filter: blur(30px)"></div>
+<div class="wrap rv" style="position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px">
+<img src="../assets/throttle-icon.svg" alt="" style="width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 0 80px rgba(79,123,255,0.5)">
+<h2 class="h2">Try it. It's free.</h2>
+<a href="https://apps.apple.com/app/throttle-health-training/id6831547958" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; height: 56px; padding: 0 26px; border-radius: 14px; background: #F5F7F8; color: #000000; font-size: 16px; font-weight: 900; text-decoration: none; white-space: nowrap">Download on the App Store</a>
+<span style="font-size: 15px; color: #8E969C">Free. iPhone with iOS 27 and an Apple Watch.</span>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #141618; padding: 48px 0 64px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center">
+<div style="display: flex; align-items: center; gap: 12px">
+<img src="../assets/throttle-icon.svg" alt="" style="width: 30px; height: 30px; border-radius: 8px">
+<span style="font-size: 15px; color: #8E969C">Made by Robin</span>
+</div>
+<div class="navlinks">
+<a href="../features/">Features</a>
+<a href="../pro/">Free and Pro</a>
+<a href="../faq/">FAQ</a>
+<a href="../privacy/">Privacy</a>
+<a href="../support/">Support</a>
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+<a href="https://www.reddit.com/r/ThrottleHealth">Reddit</a>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5E666C">Throttle is for training and recovery. It is not medical advice. Apple, Apple Watch and Apple Health are trademarks of Apple Inc.</p>
+</div>
+</footer>
+
+</div>
+<script src="../assets/features.js" defer></script>
+</body>
+</html>
