@@ -1,4 +1,4 @@
-// Drives the animated examples on the home page. No data leaves the page.
+// Drives the animated examples on this page. No data leaves the page.
 class Component {
   componentDidMount() {
     this._t0 = performance.now();
@@ -94,7 +94,7 @@ class Component {
       ],
       proList: [
         { icon: I.history, square: sq('#3D63E0'), text: 'Your full history, and trends over 30 and 90 days' },
-        { icon: I.training, square: sq('#1F7A54'), text: 'Training load, training status, intensity minutes' },
+        { icon: I.training, square: sq('#1F7A54'), text: 'Training load, training status, intensity minutes, goals' },
         { icon: I.fitness, square: sq('#6A55D9'), text: 'VO2 max, fitness age, race times, running stats, records' },
         { icon: I.journal, square: sq('#B9791F'), text: 'Journal and insights, caffeine and food' },
         { icon: I.report, square: sq('#1F7A54'), text: 'A summary of your day, morning and evening report' },
@@ -121,7 +121,7 @@ class Component {
         { n: '05', name: 'No account', text: 'Nothing to sign up for. Your health data and scores stay on your iPhone.' },
         { n: '06', name: 'Works on older Watches', text: 'Series 6 and newer, SE 2 and newer, and every Ultra. You don\u2019t need this year\u2019s Watch.' }
       ],
-      soon: ['Goals', 'Export', 'Share cards', 'Yearly recap'],
+      soon: ['Export', 'Share cards', 'Yearly recap'],
       gauges: [
         { name: 'Cadence', value: '172', unit: 'spm', usual: 'Usual 166 to 176', dot: gd('#F28BC4'), dots: this.gauge(7, 12, 10, '#F28BC4', 150) },
         { name: 'Stride length', value: '1.18', unit: 'm', usual: 'Usual 1.08 to 1.24', dot: gd('#6CB8F5'), dots: this.gauge(6, 11, 9, '#6CB8F5', 150) },
@@ -156,6 +156,18 @@ class Component {
     return this._fixed;
   }
   renderVals() {
+    var v = this.baseVals();
+    var GC = ['#F5F7F8', '#5FD068', '#6CB8F5', '#B79CFF', '#F2A55F', '#F28B9B'];
+    var gi = (4 + Math.floor(((this.state && this.state.r) || 0) / 26)) % 6;
+    v.goals = [
+      { name: 'Steps', icon: 'assets/icons/steps.svg', value: '8,420', pct: '84%', note: 'Today so far, goal 10,000', dots: this.bar(17, GC[0], 10, 20, 200) },
+      { name: 'Running', icon: 'assets/icons/goal-run.svg', value: '22.0 km', pct: '73%', note: 'This week so far, goal 30 km', dots: this.bar(15, GC[gi], 10, 20, 500) },
+      { name: 'Intensity minutes', icon: 'assets/icons/steps.svg', value: '310 min', pct: '78%', note: 'This week so far, goal 400', dots: this.bar(16, GC[1], 10, 20, 800) }
+    ];
+    v.swatches = GC.map(function (c, k) { return { style: 'width:22px;height:22px;border-radius:50%;flex:none;background:' + c + ';box-shadow:0 0 0 3px #0E0F10,0 0 0 ' + (k === gi ? '5px ' + c : '5px rgba(0,0,0,0)') + ';transition:box-shadow .3s' }; });
+    return v;
+  }
+  baseVals() {
     var f = this.fixed();
     var t = ((this.state && this.state.t) || 0) / 1.7;
     function ease(p) { p = Math.max(0, Math.min(1, p)); return 1 - Math.pow(1 - p, 3); }
